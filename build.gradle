@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		releaseBuild = version.endsWith('RELEASE')
+		snapshotBuild = version.endsWith('SNAPSHOT')
+		milestoneBuild = !(releaseBuild || snapshotBuild)
+
+		springBootVersion = '2.2.7.RELEASE'
+	}
+
+	repositories {
+		gradlePluginPortal()
+		maven { url 'https://repo.spring.io/plugins-release/' }
+	}
+
+	dependencies {
+		classpath 'io.spring.gradle:spring-build-conventions:0.0.28.RELEASE'
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+	}
+}
+
+apply plugin: 'io.spring.convention.root'
+
+group = 'org.springframework.session'
+description = 'Spring Session'
+
+subprojects {
+	apply plugin: 'io.spring.javaformat'
+
+	plugins.withType(JavaPlugin) {
+		sourceCompatibility = JavaVersion.VERSION_1_8
+	}
+
+	tasks.withType(Test) {
+		useJUnitPlatform()
+	}
+}

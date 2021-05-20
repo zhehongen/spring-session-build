@@ -1,0 +1,38 @@
+= Spring Session
+
+image:https://travis-ci.org/spring-projects/spring-session.svg?branch=master["Build Status", link="https://travis-ci.org/spring-projects/spring-session"] image:https://badges.gitter.im/spring-projects/spring-session.svg[link="https://gitter.im/spring-projects/spring-session?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"]
+
+Spring Session provides an API and implementations for managing a user's session information, while also making it trivial to support clustered sessions without being tied to an application container specific solution.
+It also provides transparent integration with:
+
+* `HttpSession` - allows replacing the `HttpSession` in an application container (i.e. Tomcat) neutral way, with support for providing session IDs in headers to work with RESTful APIs.
+* `WebSocket` - provides the ability to keep the `HttpSession` alive when receiving WebSocket messages
+* `WebSession` - allows replacing the Spring WebFlux's `WebSession` in an application container neutral way.
+
+== Modules
+
+Spring Session consists of the following modules:
+
+* Spring Session Core - provides core Spring Session functionalities and APIs
+* Spring Session Data Redis - provides `SessionRepository` and `ReactiveSessionRepository` implementation backed by Redis and configuration support
+* Spring Session JDBC - provides `SessionRepository` implementation backed by a relational database and configuration support
+* Spring Session Hazelcast - provides `SessionRepository` implementation backed by Hazelcast and configuration support
+
+
+== Code of Conduct
+
+Please see our https://github.com/spring-projects/.github/blob/master/CODE_OF_CONDUCT.md[code of conduct]
+
+
+== Reporting Security Vulnerabilities
+
+Please see our https://github.com/spring-projects/spring-session/security/policy[Security policy].
+
+
+== Spring Session Project Site
+
+You can find the documentation, issue management, support, samples, and guides for using Spring Session at https://projects.spring.io/spring-session/
+
+== License
+
+Spring Session is Open Source software released under the https://www.apache.org/licenses/LICENSE-2.0.html[Apache 2.0 license].

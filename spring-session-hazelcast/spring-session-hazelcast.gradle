@@ -1,0 +1,17 @@
+apply plugin: 'io.spring.convention.spring-module'
+
+dependencies {
+	compile project(':spring-session-core')
+	compile "com.hazelcast:hazelcast"
+	compile "javax.annotation:javax.annotation-api"
+	compile "org.springframework:spring-context"
+
+	testCompile "javax.servlet:javax.servlet-api"
+	testCompile "org.springframework:spring-web"
+	testCompile "org.springframework.security:spring-security-core"
+	testCompile "org.junit.jupiter:junit-jupiter-api"
+	testRuntime "org.junit.jupiter:junit-jupiter-engine"
+
+	integrationTestCompile "com.hazelcast:hazelcast-client"
+	integrationTestCompile "org.testcontainers:testcontainers"
+}
